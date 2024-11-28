@@ -1,0 +1,19 @@
+body {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+:root {
+  --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --color_text: rgb(195, 195, 195);
+  
+
+}
+
+.container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}

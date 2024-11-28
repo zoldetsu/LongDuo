@@ -1,0 +1,68 @@
+.sort_inner {
+    display: flex; 
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    
+    
+    .sort_btn {
+        display: flex;
+        align-items: center;
+        
+        padding: 5px 15px;
+        border-radius: var(--main-border-radius);
+        transition: all 0.3s linear;
+        cursor: pointer;
+        min-width: 0;
+
+        .all * {
+            fill: white;
+            stroke: 2px solid white;
+            width: 25px;
+            height: 25px;
+        }
+
+        .positive * {
+            fill: green;
+            width: 25px;
+            height: 25px;
+        }
+
+        .negative * {
+            fill: red;
+            stroke: 2px solid red;
+            width: 25px;
+            height: 25px;
+        }
+
+        .neutral * {
+            fill: gray;
+            width: 25px;
+            height: 25px;
+        }
+
+        .label {
+            margin-left: 5px;
+            text-align: center;
+        }
+    }
+
+    .active {
+        flex-grow: 1;
+        background-color: #3f3f3f;
+        border-radius: 7px;
+    }
+
+    @media(max-width: 999px) {
+        .sort_btn {
+            .label {
+                display: none; // скрыть текст для обычных кнопок
+            }
+        }
+
+        .sort_btn.active .label {
+            display: block; // показать текст для активной кнопки
+        }
+    }
+}

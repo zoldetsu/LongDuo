@@ -1,0 +1,55 @@
+.history_inner{
+    display: flex;
+    background-color: var(--main-blue-color);
+    padding: 10px 10px;
+    border-radius: 10px;
+    align-items: center;
+
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    .title{
+        margin-right: 10px;
+    }
+    .cancel_icon{
+        width: 10px;
+        height: 10px;
+        align-items: center;
+        position: relative;
+        justify-content: flex-end;
+        
+
+        span{
+        height: 2px;
+        
+        transform: scale(1);
+        background-color: #ffffff;
+        }
+
+        &::before, &::after {
+            content: '';
+            bottom: 50%;
+            
+            right: 0;
+            position: absolute;
+            height: 2px;
+            background-color: #ffffff;
+            width: 100%;
+
+        }
+
+        &::before {
+            top: 50%;
+            transform: rotate(-45deg) translate(0, -50%); 
+        }
+
+        &::after {
+            bottom: 50%;
+            transform: rotate(45deg) translate(0, 50%);
+        }
+    }
+    span {
+        transform: scale(0);
+    }
+}

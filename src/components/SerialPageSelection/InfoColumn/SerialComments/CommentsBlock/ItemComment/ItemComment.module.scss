@@ -1,0 +1,107 @@
+.item{
+        
+    &_wrapper{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 8px;
+        
+        margin-bottom: 7px;
+        // border: 2px solid red;
+    }
+
+    &_header{
+        display: flex;
+        align-items: center;
+        margin-bottom: 7px;
+         
+        .item_avatar{
+            width: 25px;
+            height: 25px;
+            margin-right: 10px  ;
+            border-radius: 50%;
+            border: 2px solid blue;
+
+        }
+
+        .item_author{
+            .item_user{}
+            .item_date{
+                font-size: 12px;
+                color: #6b6b6b;
+            }
+        }
+
+        .item_rating{
+            display: flex;
+            margin-left: auto;
+            align-self: self-start;
+
+            &_btn *{
+                fill: rgb(102, 102, 102);
+                width: 15px;
+                height: 15px;
+            }
+            .icon_arrow_down {
+
+                transition: ease 0.5s;
+
+                &:hover{
+
+                    *{
+                        fill: red;
+
+                    }
+                }
+            }
+
+            .icon_arrow_up {
+
+                transition: ease 0.5s;
+
+                &:hover{
+
+                    *{
+                        fill: green;
+
+                    }
+                }
+            }
+
+            &_number_wrapper{
+                width: 30px;
+                margin: 0 10px;
+            }
+
+            &_number{
+                
+                font-size: 13px;
+                text-align: center;
+                font-weight: 500;
+                margin: 0;
+                line-height: 19px;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    &_body{
+        color: #c4c4c4;
+        font-size: 18px;
+        line-height: 20px;
+        overflow-wrap: break-word;
+    }
+
+    &_footer{
+        display: flex;
+        margin-top: 7px;
+        font-size: 13px;
+
+        .footer_reply{
+            color: #a7a7a7;
+            margin-top: 3px;
+        &:not(:last-child) {
+            margin-right: 8px;
+            
+            }
+        }
+    }
+}

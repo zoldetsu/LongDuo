@@ -1,0 +1,57 @@
+.Card {
+  margin-top: 30px;
+  
+
+  p {
+    font-family: var(--font);
+    cursor: pointer;
+    font-weight: 300;
+  }
+  .Card_block_img {
+    position: relative;
+    max-width: 100%;
+
+    &:hover .text_img {
+      display: block;
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    &:hover .Card_img{
+      opacity: 0.6;
+    }
+    .Card_img {
+      width: 100%;
+      height: auto; 
+      object-fit: cover;
+      
+      z-index: 2;
+      border-radius: 10px;
+      transition: opacity 0.2s linear;
+
+      
+    }
+
+    .text_img {
+      position: absolute;
+      top: 70%;
+      left: 3%;
+      z-index: 1;
+      font-family: var(--font);
+      font-size: 20px;
+      opacity: 0;
+      transition: opacity 0.3s linear;
+    }
+  }
+  .Card_name {
+    height: 100%;
+    font-family: var(--font);
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+

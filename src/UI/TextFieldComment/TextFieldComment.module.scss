@@ -1,0 +1,107 @@
+.field_wrapper{
+    
+    height: 130px;
+    background-color: var(--main_color_bg);
+    border: 2px solid rgb(39, 39, 39);
+    border-radius: 7px;
+    margin-top: 20px;
+    padding: 10px 15px 50px 15px;
+
+    .emoji_picker{
+        position: absolute;
+        // display: none;
+        z-index: 10;
+        top: 765px;
+        left: 160px;
+        .emoji_inner{
+            
+        }
+    }
+    .comment_tools_wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .tools_inner{
+            display: flex;
+  
+            .tool {
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                transition: ease 0.3s ;
+                border-radius: 50%;
+                
+                // * стиль для элементов svg
+                *{
+                    fill: rgb(52, 196, 177);
+                    width: 20px;
+                    height: 20px;
+                }
+
+                &:not(:first-child) {
+                    margin-left: 10px;
+                }
+
+                &:hover{
+                    width: 30px;
+                    height: 30px;
+                    background-color: rgb(49, 49, 49);
+                    
+                    * {
+                        fill: rgb(40, 85, 128); 
+                    }            
+                }   
+            }            
+        }
+
+        .button{
+            width: 100px;
+            padding: 7px 7px;
+            background-color: var(--main-blue-color); 
+            border-radius: 5px;
+            color: inherit; 
+            border-color: transparent;
+            text-decoration: none;
+            box-shadow: none; 
+            transform: none; 
+            cursor: pointer;
+            transition: linear 0.1s;
+        }
+    
+    }
+    .input_field{
+        width: 100%;
+        height: 100%;
+        resize: none;
+        background: none;
+        outline: 0;
+        border: 0;
+        color: white;
+        
+        
+        &::-webkit-scrollbar{
+            width: 3px;
+            height: 8px;
+            background: none;
+            border-radius: 10px;
+        }
+    
+        /*
+        * Этот селектор применяется к ползунку (thumb) скроллбара — той части, 
+        * которую пользователь перемещает вверх-вниз или вправо-влево при прокрутке страницы.
+        */
+        &::-webkit-scrollbar-thumb {
+            background: hsla(0deg, 0%, 55%, 0.7);
+            border-radius: 10px;   
+        }
+
+        &:focus{
+            border: 0;
+            outline: 0;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+:root {
+  color: antiquewhite;
+  --basic_fonts: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --main_color_bg: rgba(24, 24, 24);
+  --main-blue-color: rgb(47, 74, 150);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  z-index: -30; /* Поместить body над псевдоэлементом ::before */
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--main_color_bg)
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -22; /* Поместить псевдоэлемент ::before под body */
+  /* background: rgba(0, 0, 0, 0.5); Черный цвет с полупрозрачностью */
+}
+
+
+button{
+  background-color: transparent;
+  text-decoration: none;
+  box-shadow: none; 
+  transform: none; 
+  color: inherit; 
+  border-color: transparent;
+  cursor: pointer; 
+}
+
+
+img {
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 2rem;
+}
+
+

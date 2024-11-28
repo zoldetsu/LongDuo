@@ -1,0 +1,74 @@
+.details_container{
+    
+    display: flex;
+    // * -------------------------------------------------
+    /*
+    * - Если содержимое элемента шире, чем сам элемент, то браузер автоматически добавляет горизонтальную полосу прокрутки, чтобы пользователь мог просмотреть всё содержимое.
+    * - Если ширина содержимого меньше ширины элемента, то полоса прокрутки не отображается.
+    */  
+    overflow-x: auto;
+    // * -------------------------------------------------
+    font-family: var(--font);
+
+    // * -------------------------------------------------
+    /*
+    * Этот селектор применяется ко всей области скролла.
+    */
+    &::-webkit-scrollbar{
+        width: 6px;
+        height: 8px;
+        
+        background: hsla(0deg, 0%, 55%, 0.2);
+        border-radius: 10px;
+    }
+
+    /*
+    * Этот селектор применяется к ползунку (thumb) скроллбара — той части, 
+    * которую пользователь перемещает вверх-вниз или вправо-влево при прокрутке страницы.
+    */
+    &::-webkit-scrollbar-thumb {
+        background: hsla(0deg, 0%, 55%, 0.7);
+        border-radius: 10px;
+    }
+    // * -------------------------------------------------
+    .details_block{
+        display: inline-block;
+        text-align: start;
+        margin-top: 5px;
+        
+
+        &:not(:last-child){
+            margin-right: 20px;
+        }
+       
+        .details_list{
+            margin-top: 15px;
+            
+        .details_list_row{
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            font-size: 0.8em;
+
+            .label_text{
+                margin-right: 11px;
+                width: 73px;
+     
+            }
+            .label_precent{
+                font-weight: 500;
+                margin-left: auto;
+                
+            }
+            .line_progress{
+                height: 10px;
+                width: 245px;
+                margin: 0 10px;
+                border-radius: 5px;
+                background-color: var(--main-blue-color);
+            }
+        }
+            
+        }
+    }
+}

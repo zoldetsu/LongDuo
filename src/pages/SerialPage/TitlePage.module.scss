@@ -1,0 +1,65 @@
+
+
+.serial_container {
+  margin-top: 60px;
+  
+  .view_container {
+
+    // * выравниваем элементы по горизонтали
+    display: flex;
+
+    .serial_poster {
+      width: 260px;
+      border-radius: 10px;
+      height: 90%;
+      margin-right: 20px;
+    }
+
+    .main_block{
+      display: flex;
+      // * распологаем элементы по вертикали 
+      flex-direction: column;
+      // * если в друг отсутствует описание, то в любом случае растягиваем элементы
+      width: 100%;
+      overflow: hidden;
+
+      .name {
+        text-align: start;
+        font-size: 35px;
+        font-family: var(--font);
+
+      }
+  
+      .status {
+        text-align: start;
+        font-family: var(--font);
+      }
+
+      .button_block{
+      display: flex;
+      justify-content: start;
+      }
+    } 
+  }
+
+  @media(max-width: 760px) {
+    .view_container{
+      display: block;
+
+      .serial_poster{
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

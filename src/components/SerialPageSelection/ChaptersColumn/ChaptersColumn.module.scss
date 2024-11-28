@@ -1,0 +1,72 @@
+.chapters_wrapper{
+    margin-top: 25px;
+    .chapters_title{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        text-align: start;
+    }
+
+    .search_inner{
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        height: 30px;
+        .search{
+            width: 100%;
+            padding: 0 10px;
+            height: 44px;
+            background-color: #202020;
+            border: transparent;
+            color: rgb(255, 255, 255);
+            border-radius: 10px;
+            
+            margin-right: 5px;
+            &::placeholder {
+                color: rgb(216, 216, 216);
+              }
+
+            &:focus{
+                outline: none;
+            }
+        
+        }
+
+        .search {
+             /* Убирает стрелочки в Firefox */
+          }
+          
+          .search::-webkit-inner-spin-button,
+          .search::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        .reverse_button{
+            display: flex;
+            align-items: center;
+            background-color: #202020;
+            border-radius: 10px;
+            padding: 0px 15px;
+            font-size: 13px;
+            height: 44px;
+
+            .reverse_icon {
+
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+
+                *{
+                    fill: white;
+                    
+                }
+            }
+            
+            
+            
+            
+        }
+
+    }
+    
+}
