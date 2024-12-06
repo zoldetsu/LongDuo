@@ -15,7 +15,7 @@ export default function Headers() {
   const [activeBurger, setActiveBurger] = useState(false);
 
   const isAdmin = true;
-  const isAuth = false;
+  const isAuth = true;
   useEffect(() => {
     setActive(pathname);
     setShowTab(false);
@@ -94,7 +94,9 @@ export default function Headers() {
               Поиск
             </div>
             {isAuth ? (
-              <div className={classes.logo_enter} onClick={toggleTab}></div>
+              <div className={classes.button_link} onClick={toggleTab}>
+                Nazar
+              </div>
             ) : (
               <Link to="/auth" className={classes.button_link}>
                 Вход

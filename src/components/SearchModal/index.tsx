@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import classes from "./SearchModal.module.scss";
 import { getCookie, setCookie } from "../../utils/cookieUtils";
 import HistoryItem from "./HistoryItem";
@@ -39,6 +39,31 @@ export default function SearchModal({ onClick }: IAlert) {
     }
   };
   //* --------------------------------------------------------------------
+
+  const initDrag = (el: HTMLElement) => {
+    let isDragging = false,
+      prevPageX = 0,
+      prevScrollLeft = 0;
+
+    const dragStart = (e: MouseEvent) => {
+      isDragging = true;
+      prevPageX = e.pageX;
+      prevScrollLeft = el.scrollLeft;
+    };
+
+    const drag = (e: MouseEvent) => {
+      if (!isDragging) return;
+      el.scrollLeft = prevScrollLeft - (e.pageX - prevPageX);
+    };
+
+    const dragStop = () => (isDragging = false);
+
+    el.addEventListener("mousedown", dragStart);
+    el.addEventListener("mousemove", drag);
+    el.addEventListener("mouseup", dragStop);
+    el.addEventListener("mouseleave", dragStop);
+  };
+
   return (
     <div>
       <div onClick={onClickExit} className={classes.modal_overlay}></div>
@@ -50,17 +75,29 @@ export default function SearchModal({ onClick }: IAlert) {
           value={item}
           onChange={(e) => setItem(e.target.value)}
         />
+        {/* ------------------------------------------------------------- */}
         <div>
           <button className={classes.buttonSearch} onClick={onSubmit}>
             тайтлы
           </button>
+          {/* ------------------------------------------------------------- */}
           <button
             className={classes.buttonSearch}
             onClick={() => onClick(false)}
           >
             пользователи
           </button>
-          <div className={classes.history_wrapper}>
+          {/* ------------------------------------------------------------- */}
+          <div
+            onMouseDown={() =>
+              initDrag(
+                document.querySelector(
+                  `.${classes.history_inner}`
+                ) as HTMLElement
+              )
+            }
+            className={classes.history_inner}
+          >
             {arraySearch.map((word: string) => (
               <HistoryItem
                 name={word}
@@ -69,7 +106,10 @@ export default function SearchModal({ onClick }: IAlert) {
               />
             ))}
           </div>
+          {/* ------------------------------------------------------------- */}
+          {/* <SwiperHistory /> */}
         </div>
+        {/* ------------------------------------------------------------- */}
       </div>
     </div>
   );

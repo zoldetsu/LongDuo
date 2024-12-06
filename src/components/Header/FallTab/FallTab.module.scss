@@ -1,12 +1,12 @@
 .tab {
   width: 180px;
-  height: auto;
-  background-color: rgb(42, 41, 48);
-  position: fixed;
+  top: 58px;
   right: 0;
+  height: auto;
+  position: absolute;
+  background-color: rgb(31, 31, 36);
 
-  top: 60px;
-  z-index: 200000;
+  z-index: 200;
   padding: 10px 10px;
   align-items: center;
   border-radius: 10px;

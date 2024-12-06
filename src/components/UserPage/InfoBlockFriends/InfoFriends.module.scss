@@ -1,0 +1,14 @@
+.person_friends_container {
+  width: 280px;
+  // border: 1px solid #a83939;
+  border-radius: 20px;
+  margin: 16px 15px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.person_friends_container div {
+  font-size: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

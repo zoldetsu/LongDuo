@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { ButtonCommentsConstation } from "../../../../utils/constants/buttonSelection";
 import ButtonSelection from "../../../../UI/ButtonSelection";
 import classes from "./SerialComments.module.scss";
-import CommentsBlock from "./CommentsBlock";
 import TextFieldComment from "../../../../UI/TextFieldComment";
+import CommentsBlock from "./CommentsBlock";
+import { useGetComments } from "../store";
+import { commentsBD } from "../../../../fakeBd/comments";
 export default function SerialComments() {
   const [activeComment, setActiveComment] = useState(
     ButtonCommentsConstation[0].name
   );
-  console.log(activeComment);
+
+  const getComment = useGetComments((state) => state.setGetComments);
+
+  useEffect(() => {
+    getComment(commentsBD);
+  }, []);
 
   return (
     <div className={classes.comments_container}>

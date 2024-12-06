@@ -4,7 +4,7 @@ import classes from "./ItemComment.module.scss";
 import ArrowDownIcon from "../../../../../../assets/down-arrow.svg?react";
 // @ts-ignore
 import ArrowUpIcon from "../../../../../../assets/up-arrow.svg?react";
-export default function ItemComment() {
+export default function ItemComment({ item }) {
   return (
     <div className={classes.item_wrapper}>
       <div className={classes.item_header}>
@@ -18,7 +18,7 @@ export default function ItemComment() {
             <ArrowDownIcon className={classes.icon_arrow_down} />
           </div>
           <div className={classes.item_rating_number_wrapper}>
-            <div className={classes.item_rating_number}>100</div>
+            <div className={classes.item_rating_number}>{item.countLike}</div>
           </div>
           <div className={classes.item_rating_btn}>
             <ArrowUpIcon className={classes.icon_arrow_up} />
@@ -26,10 +26,7 @@ export default function ItemComment() {
         </div>
       </div>
 
-      <div className={classes.item_body}>
-        пираты-разбойники, которым награбленное добро было куда ближе, чем
-        какие-то «никчемные мечты». Но вот, одним прекрасным днем,
-      </div>
+      <div className={classes.item_body}>{item.text}</div>
 
       <div className={classes.item_footer}>
         <div className={classes.footer_reply}>ответить</div>

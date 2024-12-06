@@ -1,0 +1,32 @@
+.person_info_container {
+  width: 1070px;
+  // border: 2px solid #a83939;
+  border-radius: 20px;
+  margin: 16px 15px;
+
+  .block_fall {
+    position: relative;
+    margin-top: 20px;
+  }
+  .button_line {
+    display: flex;
+    justify-content: start;
+
+    .button {
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      border: 1px solid #dddddd;
+      border-radius: 10px;
+
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: 0.1s;
+    }
+    .button:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    .button:hover {
+      border: 1px solid #a83939;
+    }
+  }
+}

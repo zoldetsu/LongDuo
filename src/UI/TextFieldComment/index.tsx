@@ -7,8 +7,21 @@ import PaperIcon from "../../assets/clip.svg?react";
 
 import EmojiPicker from "emoji-picker-react";
 import { useState } from "react";
+import { useGetComments } from "../../components/SerialPageSelection/InfoColumn/store";
 export default function TextFieldComment() {
   const [emojiAcive, setEmojiActive] = useState(false);
+  const [text, setText] = useState("");
+  const [countLike, setCountLike] = useState(0);
+  // * zustand
+  const addComment = useGetComments((state) => state.setAddComment);
+
+  const onSubmit = () => {
+    const values = {
+      text,
+      countLike,
+    };
+    addComment(values);
+  };
   return (
     <div className={classes.field_wrapper}>
       <div className={classes.emoji_picker}>
@@ -20,9 +33,11 @@ export default function TextFieldComment() {
       </div>
       <textarea
         className={classes.input_field}
+        value={text}
         name=""
         id=""
         placeholder="Напишите что нибудь..."
+        onChange={(e) => setText(e.target.value)}
       />
       <div className={classes.comment_tools_wrapper}>
         <div className={classes.tools_inner}>
@@ -38,7 +53,9 @@ export default function TextFieldComment() {
           </div>
         </div>
 
-        <button className={classes.button}>Отправить</button>
+        <button onClick={onSubmit} className={classes.button}>
+          Отправить
+        </button>
       </div>
     </div>
   );
