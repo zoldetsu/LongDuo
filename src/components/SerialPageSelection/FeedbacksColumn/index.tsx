@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ButtonsSortingSelection from "./ButtonsSortingSelection";
 import classes from "./FeedBacksColumn.module.scss";
 import ItemFeedback from "./ItemFeedback";
@@ -8,13 +8,21 @@ import { reviewsBD } from "../../../fakeBd/reviews";
 
 export default function FeedbacksColumn() {
   const [open, setOpen] = useState(false);
-  const getReviews = useGetReviews((state) => state.setGetReviews);
-  const reviews = useGetReviews((state) => state.arrayReviews);
+  const { setGetReviews, arrayReviews } = useGetReviews((state) => state);
+
   useEffect(() => {
-    getReviews(reviewsBD);
+    setGetReviews(reviewsBD);
   }, []);
 
-  console.log(reviews);
+  const [filterType, setFilterType] = useState("all");
+
+  const filteredReviews = useMemo(() => {
+    return filterType === "all"
+      ? arrayReviews
+      : arrayReviews.filter((obj: TReview) => obj.type === filterType);
+  }, [filterType, arrayReviews]);
+
+  const handleClick = (type: string) => setFilterType(type);
 
   return (
     <div>
@@ -25,10 +33,10 @@ export default function FeedbacksColumn() {
         Написать отзыв
       </button>
       {open && <ReviewModal setOpen={setOpen} />}
-      <ButtonsSortingSelection />
+      <ButtonsSortingSelection typeFilter={handleClick} />
 
       <div className={classes.feedbacks__inner}>
-        {reviews.map((review: TReview) => (
+        {filteredReviews.map((review: TReview) => (
           <ItemFeedback item={review} />
         ))}
       </div>

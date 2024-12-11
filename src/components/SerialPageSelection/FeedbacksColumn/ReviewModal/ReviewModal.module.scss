@@ -81,16 +81,31 @@
         .button_type{
             width: 100%;
             
-            padding: 10px;
+            padding: 6px;
             border-radius: 7px;
-        }
 
+            *{
+                fill: white;
+                width: 25px;
+                height: 25px;
+            }
+        }
+ 
         .button_type_positive{
 
             background-color: rgb(32, 65, 32);
+
+            *{
+                fill: rgb(0, 194, 0);
+            }
+
         }
         .button_type_negative{
             background-color: rgb(87, 36, 36);
+
+            *{
+                fill: rgb(194, 0, 0);
+            }
         }
         .button_type_neutral{
             background-color: rgb(61, 61, 61);

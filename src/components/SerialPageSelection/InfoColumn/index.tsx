@@ -8,7 +8,7 @@ interface ITabInfo {
 
 export default function InfoColumn({ SerialInfo }: ITabInfo) {
   return (
-    <div>
+    <select>
       <div className={classes.discription}>
         {SerialInfo.discription.length === 0
           ? "Описание отсутствует"
@@ -20,6 +20,6 @@ export default function InfoColumn({ SerialInfo }: ITabInfo) {
         <SerialDetails />
         <SerialComments />
       </div>
-    </div>
+    </select>
   );
 }

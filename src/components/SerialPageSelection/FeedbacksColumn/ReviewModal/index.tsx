@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import classes from "./ReviewModal.module.scss";
 import { useGetReviews } from "../store";
+import { ButtonReviewsConstation } from "../../../../utils/constants/buttonSelection";
 
 interface IReviewModal {
   setOpen: (arg: boolean) => void;
@@ -76,15 +77,15 @@ export default function ReviewModal({ setOpen }: IReviewModal) {
         </div>
         <div className={` ${classes.text}`}>Тип отзыва</div>
         <div className={classes.buttons_types}>
-          {["positive", "negative", "neutral"].map((type, index) => (
+          {ButtonReviewsConstation.map((type, index) => (
             <button
               key={index}
-              onClick={() => setActive(type)}
+              onClick={() => setActive(type.name)}
               className={`${classes.button_type} ${
-                active === type ? classes[`button_type_${type}`] : ""
+                active === type.name ? classes[`button_type_${type.name}`] : ""
               }`}
             >
-              {index + 1}
+              {type.icon}
             </button>
           ))}
         </div>

@@ -1,0 +1,41 @@
+.profile_wrapper {
+  // overflow-y: auto;
+  margin-top: 40px;
+
+  .profile_background{
+    width: 100%;
+    height: 360px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: relative;
+    
+    
+    
+    
+    .profile_banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      z-index: -100;
+      object-position: center;
+      border-radius: 10px;
+      
+    }
+  }
+  
+  @media(max-width: 550px) {
+    .profile_background{
+
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+    }
+  } 
+}

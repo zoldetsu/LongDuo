@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import { RequireAuth } from "./hoc/RequireAuth";
 import Аuthentication from "./pages/Аuthentication";
 import SerialPage from "./pages/SerialPage";
-import PersonalPage from "./pages/PersonalPage/PersonalPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Route path="auth" element={<Аuthentication />} />
           <Route index element={<HomePage />} />
           <Route path="anime/:id" element={<SerialPage />} />
-          <Route path="person" element={<PersonalPage />} />
+          <Route path="person" element={<ProfilePage />} />
           <Route
             path="users/:id"
             element={

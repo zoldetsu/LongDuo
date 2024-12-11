@@ -14,7 +14,11 @@ export default function ItemFeedback({ item }: TtypeFeedBack) {
   return (
     <div className={classes.review_item_wrapper}>
       <div className={classes.review_item_header}>
-        <span className={classes.vertical_line}></span>
+        <span
+          className={`${classes.vertical_line} ${
+            classes[`vertical_line_${item.type}`]
+          }`}
+        ></span>
         <img className={classes.avatar} src="" alt="" />
         <div className={classes.name}>{item.nickName || "Nazar"}</div>
         <div className={classes.date}>{item.date || "2 часа назад"}</div>

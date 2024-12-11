@@ -13,6 +13,15 @@
             margin-right: 10px;
             border-radius: 5px;
         }
+        .vertical_line_negative{
+            background-color: rgb(128, 0, 0);
+        }
+        .vertical_line_positive{
+            background-color: green;
+        }
+        .vertical_line_neutral{
+            background-color: rgb(99, 99, 99);
+        }
         .avatar{
             width: 25px;
             height: 25px;

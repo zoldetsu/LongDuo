@@ -40,3 +40,24 @@ export const ButtonFeedbacksConstation = [
     style: "neutral",
   },
 ];
+
+export const ButtonReviewsConstation = [
+  {
+    name: "positive",
+    label: "Положительные",
+    icon: <PositiveIcon />,
+    style: "positive",
+  },
+  {
+    name: "negative",
+    label: "Отрицательные",
+    icon: <NegativeIcon />,
+    style: "negative",
+  },
+  {
+    name: "neutral",
+    label: "Нейтральные",
+    icon: <NeutralIcon />,
+    style: "neutral",
+  },
+];
