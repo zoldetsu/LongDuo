@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import classes from "./SearchModal.module.scss";
 import { getCookie, setCookie } from "../../utils/cookieUtils";
 import HistoryItem from "./HistoryItem";
+import { initDrag } from "../../utils/dragFunction";
 
 interface IAlert {
   onClick: (arg: boolean) => void;
@@ -11,6 +12,7 @@ interface IAlert {
 export default function SearchModal({ onClick }: IAlert) {
   const [item, setItem] = useState("");
   const [arraySearch, setArraySearch] = useState<string[]>([]);
+  const marksInnerRef = useRef<HTMLElement>(null);
   //* --------------------------------------------------------------------
   useEffect(() => {
     const arrayString = getCookie("saveArray");
@@ -38,31 +40,13 @@ export default function SearchModal({ onClick }: IAlert) {
     } else {
     }
   };
-  //* --------------------------------------------------------------------
 
-  const initDrag = (el: HTMLElement) => {
-    let isDragging = false,
-      prevPageX = 0,
-      prevScrollLeft = 0;
-
-    const dragStart = (e: MouseEvent) => {
-      isDragging = true;
-      prevPageX = e.pageX;
-      prevScrollLeft = el.scrollLeft;
-    };
-
-    const drag = (e: MouseEvent) => {
-      if (!isDragging) return;
-      el.scrollLeft = prevScrollLeft - (e.pageX - prevPageX);
-    };
-
-    const dragStop = () => (isDragging = false);
-
-    el.addEventListener("mousedown", dragStart);
-    el.addEventListener("mousemove", drag);
-    el.addEventListener("mouseup", dragStop);
-    el.addEventListener("mouseleave", dragStop);
+  const handleMouseDown = () => {
+    if (marksInnerRef.current) {
+      initDrag(marksInnerRef.current);
+    }
   };
+  //* --------------------------------------------------------------------
 
   return (
     <div>

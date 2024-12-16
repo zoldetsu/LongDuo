@@ -8,16 +8,14 @@ export default function ProfilePage() {
     <div className={classes.profile_wrapper}>
       <section className={classes.profile_background}>
         <img className={classes.profile_banner} src={"isagi.jpg"} alt="" />
-
         <InfoProfile />
       </section>
-      <section>
-        <div>
-          <AboutFriends />
-          <AboutProfile />
-        </div>
-
+      <section className={classes.about_body}>
         <AboutBookmarks />
+        <div>
+          <AboutProfile />
+          <AboutFriends />
+        </div>
       </section>
     </div>
   );

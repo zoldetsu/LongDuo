@@ -11,10 +11,9 @@
 }
 
 .modal{
-    
+
     width: 90%; /* или 100%, в зависимости от  дизайна */
     max-width: 500px; /* при этом не давайте блоку ширину больше 500px */
-    
     position: fixed;
     display: flex;
     padding: 20px;
@@ -30,7 +29,6 @@
     .inputFieldSearch{
         
         padding: 15px 15px;
-        
         border: 1px solid rgb(80, 80, 80);
         margin-top: 0px;
         background: none;
@@ -67,52 +65,20 @@
             margin-right: 10px;
         }
     }
+    .history_inner{
 
-    // .history_wrapper{
-    //     position: relative;
-    //     z-index: 10;
-    //     width: 100%;
-    //     height: 100%;
-    //     white-space: nowrap;
-    //     // cursor: grab;
-    //     .blackout{
-    //         z-index: 9;
-    //         width: 60px;
-    //         height: 100%;
-    //         position: absolute;
-    //         top: 0;
-    //         right: 0;
-    //         background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(22, 22, 22, 1));
-    //     }
-        .history_inner{
+        display: flex;
+        margin-top: 20px;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
             
-            display: flex;
-            margin-top: 20px;
-            // margin-top: 15px;
-            // overflow: hidden;
-            // overflow-x: auto;
-            
-            // position: relative;
-            // font-family: var(--font);
-
-            // &::-webkit-scrollbar{
-            //     display: none;
-            // }
-
-            // &::-webkit-scrollbar-thumb{
-            //     display: none;
-            // }
-    
-            cursor: pointer;
-            overflow: hidden;
-            white-space: nowrap;
-            
-            &::-webkit-scrollbar{
-                display: none;
-            }
-            
+        &::-webkit-scrollbar{
+            display: none;
         }
-    // }
+            
+    }
+
     
     &.light{
         background-color: white;
