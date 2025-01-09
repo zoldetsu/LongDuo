@@ -6,8 +6,10 @@ export default function AboutProfile() {
       <div className={classes.line}></div>
       <div className={classes.description_title}>Описание</div>
       <div className={classes.description_text}>
-        я играю майнкрафт я играю майнкрафт я играю майнкрафтя играю майнкрафтя
-        играю майнкрафтя играю майнкрафт
+        Хочу пожелать вам только самого лучшего! Пусть ваша жизнь будет
+        наполнена счастьем, любовью и радостью. Пусть здоровье никогда не
+        подводит, удача сопутствует во всех начинаниях, а мечты исполняются
+        легко и красиво.
       </div>
       <div className={classes.date_title}>Дата рождения</div>
       <div className={classes.date_text}>20.03.2003</div>

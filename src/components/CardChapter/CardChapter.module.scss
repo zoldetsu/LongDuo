@@ -1,6 +1,7 @@
 .Card {
   margin-top: 30px;
   
+  
 
   p {
     font-family: var(--font);
@@ -10,6 +11,7 @@
   .Card_block_img {
     position: relative;
     max-width: 100%;
+    max-height: 230px;
 
     &:hover .text_img {
       display: block;
@@ -22,7 +24,8 @@
     }
     .Card_img {
       width: 100%;
-      height: auto; 
+      height: 100%;
+       
       object-fit: cover;
       
       z-index: 2;
